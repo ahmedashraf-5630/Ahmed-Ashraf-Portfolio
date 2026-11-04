@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahmed Ashraf | Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #09090f;
+            --card: #12121c;
+            --purple: #9b6cff;
+            --text: #ffffff;
+            --muted: #a1a1aa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Navbar */
+
+        .navbar {
+            background: rgba(9, 9, 15, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 18px 0;
+            border-bottom: 1px solid #ffffff0d;
+        }
+
+        .navbar-brand {
+            font-size: 25px;
+        }
+
+        .navbar-brand span,
+        .hero h1 span,
+        .hero h2 span,
+        .section-title span {
+            color: var(--purple);
+        }
+
+        .nav-link {
+            color: #b5b5c0 !important;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--purple) !important;
+        }
+
+        .admin-btn {
+            border: 1px solid var(--purple);
+            color: var(--purple);
+            border-radius: 8px;
+            padding: 8px 15px;
+        }
+
+        .admin-btn:hover {
+            background: var(--purple);
+            color: white;
+        }
+
+        /* Hero */
+
+        .hero {
+            padding-top: 70px;
+        }
+
+        .available {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #151d1a;
+            color: #65d99a;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 30px;
+        }
+
+        .available span {
+            width: 8px;
+            height: 8px;
+            background: #65d99a;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #65d99a;
+        }
+
+        .intro,
+        .section-label {
+            color: var(--purple);
+            letter-spacing: 4px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 75px);
+            font-weight: 800;
+            margin: 15px 0;
+        }
+
+        .hero h2 {
+            font-size: clamp(22px, 4vw, 32px);
+            font-weight: 600;
+        }
+
+        .description {
+            color: var(--muted);
+            line-height: 1.9;
+            max-width: 550px;
+            margin-top: 20px;
+        }
+
+        .primary-btn {
+            background: var(--purple);
+            color: white;
+            padding: 13px 23px;
+            border-radius: 9px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .primary-btn:hover {
+            background: #8050dc;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            border: 1px solid #444452;
+            color: white;
+            padding: 13px 23px;
+            border-radius: 9px;
+            text-decoration: none;
+        }
+
+        .secondary-btn:hover {
+            border-color: var(--purple);
+            color: var(--purple);
+        }
+
+        /* Social */
+
+        .social-links {
+            display: flex;
+            gap: 22px;
+        }
+
+        .social-links a {
+            color: #aaa;
+            font-size: 22px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--purple);
+            transform: translateY(-4px);
+        }
+
+        /* Profile Card */
+
+        .profile-card {
+            background: linear-gradient(145deg, #191528, #11111a);
+            border: 1px solid #ffffff15;
+            border-radius: 25px;
+            padding: 55px 20px;
+            max-width: 390px;
+            margin: auto;
+            box-shadow: 0 20px 70px #00000060;
+            transition: 0.4s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile-icon {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 30px;
+            background: #9b6cff20;
+            border: 1px solid var(--purple);
+            border-radius: 30px;
+            color: var(--purple);
+            font-size: 60px;
+        }
+
+        .profile-card h3 {
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .profile-card p {
+            color: var(--muted);
+            margin-top: 10px;
+        }
+
+        .code-line {
+            background: #09090f;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 7px;
+            color: #a88aff;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        /* Sections */
+
+        .section-space {
+            padding-top: 100px;
+            padding-bottom: 70px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 800;
+            margin-top: 15px;
+        }
+
+        /* Skills */
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid #ffffff12;
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            font-size: 30px;
+            color: var(--purple);
+        }
+
+        .skill-card h5 {
+            margin-top: 15px;
+        }
+
+        /* Projects */
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid #ffffff12;
+            border-radius: 15px;
+            padding: 25px;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--purple);
+        }
+
+        .project-card i {
+            font-size: 35px;
+            color: var(--purple);
+        }
+
+        .project-card p {
+            color: var(--muted);
+        }
+
+        .project-tag {
+            color: var(--purple);
+            font-size: 12px;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid #ffffff12;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        #typing {
+            border-right: 2px solid var(--purple);
+            padding-right: 5px;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-nav {
+                padding-top: 20px;
+            }
+
+            .hero {
+                padding-top: 110px;
+            }
+
+            .profile-card {
+                margin-top: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">
+                Ahmed<span>.</span>
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#dashboard" class="btn admin-btn">
+                            <i class="bi bi-grid"></i> Dashboard
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <section class="hero container">
+
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-7">
+
+                <div class="available">
+                    <span></span>
+                    Available for opportunities
+                </div>
+
+                <p class="intro">HELLO, I'M</p>
+
+                <h1>
+                    Ahmed <span>Ashraf</span>
+                </h1>
+
+                <h2>
+                    I'm a <span id="typing"></span>
+                </h2>
+
+                <p class="description">
+                    Commerce Student & Aspiring Full-Stack Developer.
+                    I create modern, responsive and interactive
+                    web experiences.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+
+                    <a href="#projects" class="btn primary-btn">
+                        View My Projects
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                    <a href="#contact" class="btn secondary-btn">
+                        Contact Me
+                    </a>
+
+                </div>
+
+                <div class="social-links mt-5">
+
+                    <a href="https://github.com/ahmedashraf-24414" target="_blank">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                    <a href="https://linkedin.com" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="mailto:ahmedashraf2718@gmail.com">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+
+                <div class="profile-card">
+
+                    <div class="profile-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+
+                    <h3>AHMED ASHRAF</h3>
+
+                    <p>Developer & Creative Thinker</p>
+
+                    <div class="code-line">
+                        const developer = "Ahmed";
+                    </div>
+
+                    <div class="code-line">
+                        developer.create();
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+
+    <section id="about" class="container section-space">
+
+        <p class="section-label">GET TO KNOW ME</p>
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <p class="description">
+            I'm Ahmed Ashraf, a Commerce student with a passion
+            for web development and technology. I enjoy building
+            creative websites and learning new technologies.
+        </p>
+
+    </section>
+
+
+    <!-- Skills Section -->
+
+    <section id="skills" class="container section-space">
+
+        <p class="section-label">WHAT I KNOW</p>
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="row g-4 mt-3">
+
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <i class="bi bi-filetype-html"></i>
+                    <h5>HTML</h5>
+                    <p class="description">Building web structures.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <i class="bi bi-filetype-css"></i>
+                    <h5>CSS</h5>
+                    <p class="description">Styling modern websites.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <i class="bi bi-filetype-js"></i>
+                    <h5>JavaScript</h5>
+                    <p class="description">Interactive web experiences.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <i class="bi bi-bootstrap"></i>
+                    <h5>Bootstrap</h5>
+                    <p class="description">Responsive web design.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <i class="bi bi-database"></i>
+                    <h5>SQL</h5>
+                    <p class="description">Database fundamentals.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <i class="bi bi-palette"></i>
+                    <h5>Graphic Design</h5>
+                    <p class="description">Creative visual designs.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects Section -->
+
+    <section id="projects" class="container section-space">
+
+        <p class="section-label">MY RECENT WORK</p>
+
+        <h2 class="section-title">
+            Featured <span>Projects</span>
+        </h2>
+
+        <div class="row g-4 mt-3" id="projectsContainer">
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="container section-space">
+
+        <p class="section-label">LET'S CONNECT</p>
+
+        <h2 class="section-title">
+            Have a project in <span>mind?</span>
+        </h2>
+
+        <p class="description">
+            Feel free to contact me for collaborations,
+            freelance projects or opportunities.
+        </p>
+
+        <a href="https://wa.me/201156302718"
+            class="btn primary-btn mt-3">
+
+            Let's Talk <i class="bi bi-send"></i>
+
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer class="text-center py-4">
+
+        © 2026 Ahmed Ashraf. All Rights Reserved.
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+
+        // Typing Animation
+
+        const typingElement = document.getElementById("typing");
+
+        const words = [
+            "Frontend Developer",
+            "Full-Stack Developer",
+            "Creative Thinker",
+            "Web Designer"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeEffect() {
+
+            const currentWord = words[wordIndex];
+
+            if (deleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
+
+            typingElement.textContent =
+                currentWord.substring(0, charIndex);
+
+            let speed = deleting ? 50 : 100;
+
+            if (!deleting && charIndex === currentWord.length) {
+
+                deleting = true;
+                speed = 1500;
+
+            }
+
+            else if (deleting && charIndex === 0) {
+
+                deleting = false;
+
+                wordIndex = (wordIndex + 1) % words.length;
+
+                speed = 400;
+
+            }
+
+            setTimeout(typeEffect, speed);
+
+        }
+
+        typeEffect();
+
+
+        // Dynamic Projects
+
+        const projects = [
+
+            {
+                name: "Portfolio Website",
+                description: "A modern personal portfolio website.",
+                category: "Web Development",
+                icon: "bi-globe",
+                link: "https://ahmedashraf-5630.github.io/web-site/"
+            },
+
+          {
+            name: "Clothing Store",
+            description: "A modern online clothing store with a clean and responsive design.",
+             category: "E-Commerce Website",
+             icon: "bi-bag",
+             link: "https://ahmedashraf-5630.github.io/AURA-Store/"
+        },
+            {
+                name: "Library System",
+                description: "A digital platform for managing lecture materials.",
+                category: "Web Development",
+                icon: "bi-book",
+                link: "https://ahmedashraf-5630.github.io/copy-center/"
+            }
+
+        ];
+
+
+        const projectsContainer =
+            document.getElementById("projectsContainer");
+
+
+        function displayProjects() {
+
+            projectsContainer.innerHTML = "";
+
+            projects.forEach((project, index) => {
+
+                projectsContainer.innerHTML += `
+
+                    <div class="col-md-4">
+
+                        <div class="project-card">
+
+                            <i class="bi ${project.icon}"></i>
+
+                            <h4 class="mt-3">
+                                ${project.name}
+                            </h4>
+
+                            <p>${project.description}</p>
+
+                            <span class="project-tag">
+                                ${project.category}
+                            </span>
+
+                            <div class="mt-4">
+
+                                <a href="${project.link}"
+                                   class="text-decoration-none"
+                                   style="color:#9b6cff">
+
+                                    View Project
+                                    <i class="bi bi-arrow-up-right"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+        displayProjects();
+
+    </script>
+
+</body>
+</html>
